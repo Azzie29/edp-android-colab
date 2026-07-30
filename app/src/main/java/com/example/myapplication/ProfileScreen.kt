@@ -25,49 +25,36 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
-
 @Composable
 fun ProfileScreen(
     darkTheme: Boolean,
-    onThemeChange: () -> Unit
+    onThemeChange: () -> Unit,
 ) {
-
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
     ) {
-
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(24.dp)
         ) {
-
             IconButton(
                 onClick = onThemeChange,
                 modifier = Modifier.align(Alignment.TopEnd)
             ) {
-
                 Icon(
-                    imageVector = if (darkTheme)
-                        Icons.Default.LightMode
-                    else
-                        Icons.Default.DarkMode,
-
+                    imageVector = if (darkTheme) Icons.Default.LightMode else Icons.Default.DarkMode,
                     contentDescription = "Toggle Theme",
                     tint = MaterialTheme.colorScheme.primary
                 )
             }
 
-
             Column(
                 modifier = Modifier.fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-
-
                 Spacer(modifier = Modifier.height(40.dp))
-
 
                 Box(
                     modifier = Modifier
@@ -79,10 +66,8 @@ fun ProfileScreen(
                             MaterialTheme.colorScheme.tertiary,
                             CircleShape
                         ),
-
                     contentAlignment = Alignment.Center
                 ) {
-
                     Text(
                         text = "AU",
                         style = MaterialTheme.typography.displaySmall,
@@ -91,9 +76,7 @@ fun ProfileScreen(
                     )
                 }
 
-
                 Spacer(modifier = Modifier.height(18.dp))
-
 
                 Text(
                     text = "Azzie Umbay",
@@ -101,9 +84,7 @@ fun ProfileScreen(
                     fontWeight = FontWeight.Bold
                 )
 
-
                 Spacer(modifier = Modifier.height(6.dp))
-
 
                 Text(
                     text = "Aspiring Android Developer",
@@ -111,9 +92,7 @@ fun ProfileScreen(
                     color = MaterialTheme.colorScheme.primary
                 )
 
-
                 Spacer(modifier = Modifier.height(6.dp))
-
 
                 Text(
                     text = "BS Information Technology • BSIT 3-2",
@@ -121,29 +100,21 @@ fun ProfileScreen(
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
 
-
                 Spacer(modifier = Modifier.height(28.dp))
 
-
                 Card(
-                    modifier = Modifier
-                        .fillMaxWidth(),
-
+                    modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(24.dp),
-
                     colors = CardDefaults.cardColors(
                         containerColor = MaterialTheme.colorScheme.surface
                     ),
-
                     elevation = CardDefaults.cardElevation(
                         defaultElevation = 8.dp
                     )
                 ) {
-
                     Column(
                         modifier = Modifier.padding(16.dp)
                     ) {
-
                         Text(
                             text = "Personal Information",
                             style = MaterialTheme.typography.titleMedium,
@@ -161,83 +132,43 @@ fun ProfileScreen(
 
                         Spacer(modifier = Modifier.height(10.dp))
 
-
-                        InfoRow(
-                            Icons.Default.Person,
-                            "Full Name",
-                            "Azzie Umbay"
-                        )
-
+                        InfoRow(Icons.Default.Person, "Full Name", "Azzie Umbay")
                         HorizontalDivider()
-
-                        InfoRow(
-                            Icons.Default.Tag,
-                            "Section",
-                            "BSIT 3 - 2"
-                        )
-
+                        InfoRow(Icons.Default.Tag, "Section", "BSIT 3 - 2")
                         HorizontalDivider()
-
-                        InfoRow(
-                            Icons.Default.School,
-                            "Course",
-                            "BS Information Technology"
-                        )
-
+                        InfoRow(Icons.Default.School, "Course", "BS Information Technology")
                         HorizontalDivider()
-
-                        InfoRow(
-                            Icons.Default.Phone,
-                            "Mobile Number",
-                            "0977 112 8463"
-                        )
-
+                        InfoRow(Icons.Default.Phone, "Mobile Number", "0977 112 8463")
                         HorizontalDivider()
-
-                        InfoRow(
-                            Icons.Default.Email,
-                            "Email Address",
-                            "aumbay15550@liceo.edu.ph"
-                        )
+                        InfoRow(Icons.Default.Email, "Email Address", "aumbay15550@liceo.edu.ph")
                     }
                 }
 
-
                 Footer()
-
             }
         }
     }
 }
 
-
 @Composable
 fun InfoRow(
     icon: ImageVector,
     label: String,
-    value: String
+    value: String,
 ) {
-
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 14.dp),
-
         verticalAlignment = Alignment.CenterVertically
     ) {
-
-
         Box(
             modifier = Modifier
                 .size(52.dp)
                 .clip(CircleShape)
-                .background(
-                    MaterialTheme.colorScheme.primary.copy(alpha = 0.12f)
-                ),
-
+                .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.12f)),
             contentAlignment = Alignment.Center
         ) {
-
             Icon(
                 imageVector = icon,
                 contentDescription = label,
@@ -246,21 +177,14 @@ fun InfoRow(
             )
         }
 
-
         Spacer(modifier = Modifier.width(18.dp))
 
-
-        Column(
-            modifier = Modifier.weight(1f)
-        ) {
-
+        Column(modifier = Modifier.weight(1f)) {
             Text(
                 text = label,
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.primary
             )
-
-
             Text(
                 text = value,
                 style = MaterialTheme.typography.bodyLarge,
@@ -271,18 +195,11 @@ fun InfoRow(
     }
 }
 
-
-
 @Composable
 fun Footer() {
-
     Spacer(modifier = Modifier.height(24.dp))
-
     HorizontalDivider()
-
     Spacer(modifier = Modifier.height(12.dp))
-
-
     Text(
         text = "Built with Jetpack Compose",
         style = MaterialTheme.typography.labelMedium,
@@ -290,45 +207,18 @@ fun Footer() {
     )
 }
 
-
-
-@Preview(
-    showBackground = true,
-    showSystemUi = true,
-    name = "Light Mode"
-)
+@Preview(showBackground = true, showSystemUi = true, name = "Light Mode")
 @Composable
 fun ProfileLightPreview() {
-
-    MyApplicationTheme(
-        darkTheme = false
-    ) {
-
-        ProfileScreen(
-            darkTheme = false,
-            onThemeChange = {}
-        )
+    MyApplicationTheme(darkTheme = false) {
+        ProfileScreen(darkTheme = false) {}
     }
 }
 
-
-
-@Preview(
-    showBackground = true,
-    showSystemUi = true,
-    uiMode = Configuration.UI_MODE_NIGHT_YES,
-    name = "Dark Mode"
-)
+@Preview(showBackground = true, showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES, name = "Dark Mode")
 @Composable
 fun ProfileDarkPreview() {
-
-    MyApplicationTheme(
-        darkTheme = true
-    ) {
-
-        ProfileScreen(
-            darkTheme = true,
-            onThemeChange = {}
-        )
+    MyApplicationTheme(darkTheme = true) {
+        ProfileScreen(darkTheme = true) {}
     }
 }
