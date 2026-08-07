@@ -1,11 +1,28 @@
-package com.example.myapplication.ui.theme
+package com.example.greetingapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+// Purple Pastel Theme Colors
+val PastelPurplePrimary = Color(0xFFB39DDB)
+val PastelPurpleSecondary = Color(0xFFF8BBD0)
+val PastelPurpleBackground = Color(0xFFF3E5F5)
+val PastelPurpleSurface = Color(0xFFFFFFFF)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+// Container colors
+val PastelPurplePrimaryContainer = Color(0xFFE1BEE7)
+val PastelPurpleSecondaryContainer = Color(0xFFFFECB3)
+
+// Text colors
+val PastelPurpleTextPrimary = Color(0xFF4A148C)
+val PastelPurpleTextSecondary = Color(0xFF7E57C2)
+val PastelPurpleOnBackground = Color(0xFF212121)
+
+// Theme aliases for easier mapping
+val PrimaryMM = PastelPurplePrimary
+val SecondaryMM = PastelPurpleSecondary
+val BackgroundMM = PastelPurpleBackground
+val SurfaceMM = PastelPurpleSurface
+
+val OnPrimaryMM = Color.White
+val OnBackgroundMM = PastelPurpleOnBackground
+val OnSurfaceMM = PastelPurpleOnBackground
