@@ -1,10 +1,12 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
     namespace = "com.example.myapplication"
+
     compileSdk {
         version = release(37) {
             minorApiLevel = 1
@@ -28,10 +30,12 @@ android {
             }
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     buildFeatures {
         compose = true
     }
@@ -39,18 +43,35 @@ android {
 
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
+
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
+
+    implementation("androidx.compose.runtime:runtime-saveable:1.10.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.2")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
+
+    implementation("com.squareup.retrofit2:retrofit:3.0.0")
+
+    implementation("com.squareup.retrofit2:converter-kotlinx-serialization:3.0.0")
+
+    implementation("com.squareup.okhttp3:logging-interceptor:5.1.0")
+
     testImplementation(libs.junit)
+
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
 }
